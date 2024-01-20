@@ -3501,33 +3501,6 @@
     )
   )
 
-  (symbol (lib_id "Graphic:Logo_Open_Hardware_Small") (at 247.65 125.73 0) (unit 1)
-    (in_bom no) (on_board no) (dnp no) (fields_autoplaced)
-    (uuid b143cff3-32ad-4abd-917e-99047ecab703)
-    (property "Reference" "#SYM2" (at 247.65 118.745 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "Logo_Open_Hardware_Small" (at 247.65 131.445 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "" (at 247.65 125.73 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 247.65 125.73 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Sim.Enable" "0" (at 247.65 125.73 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (instances
-      (project "CoCo-FujiNet-Rev00"
-        (path "/530151af-e929-4ebc-81ba-062acbc84619"
-          (reference "#SYM2") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "Device:R_Small_US") (at 143.51 124.46 90) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b337819d-6263-4adb-bc1b-389f93a6e6e6)

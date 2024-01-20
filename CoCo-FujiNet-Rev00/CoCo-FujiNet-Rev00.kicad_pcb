@@ -828,7 +828,7 @@
       (net 18 "/IO23{slash}SPI_MOSI") (pinfunction "IO23") (pintype "bidirectional") (tstamp bae6ab39-10a9-41dc-946a-22055e6b491a))
     (pad "38" thru_hole circle (at 12.7 -22.85) (size 1.53 1.53) (drill 1.02) (layers "*.Cu" "*.Mask")
       (net 2 "GND") (pinfunction "GND3") (pintype "power_in") (tstamp 74aceae3-864c-4815-83f3-c7edf8409737))
-    (model "C:/Users/cdter/Documents/Kicad/ESP32-WROOM-32D-Assembly.STEP"
+    (model "C:/Users/cdter/Documents/Kicad/ESP32-WROOM-32D-Assembly.STEP" hide
       (offset (xyz 0 0 11))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))

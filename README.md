@@ -12,6 +12,10 @@ Schematic - https://djtersteegc.github.io/Coco-FujiNet/CoCo-FujiNet-Rev00-Schema
 
 Interactive BOM - https://djtersteegc.github.io/Coco-FujiNet/ibom-Rev00.html
 
+![rev00-top.png](docs/rev00-top.png)
+
+![rev00-side.png](docs/rev00-side.png)
+
 You'll need 8.5mm high [2.54mm female header strips](https://www.aliexpress.us/item/2251832416528370.html) to mount the ESP32.  Buy the 1x40 versions and cut to length.
 
 MicroSD socket footprint is the common [Chinese push-push version](https://www.aliexpress.us/item/2251832613969983.html) used on all the FujiNet's to date.
