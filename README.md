@@ -4,6 +4,8 @@ Repo for early testing of FujiNet PCB's for the Tandy Color Computer
 
 Needs to be reworked to connect the CD pin of the serial port to IO22 on the ESP32.
 
+KiCad PCB Layout - https://djtersteegc.github.io/Coco-FujiNet/pcb-traces-rev0.png
+
 # Rev00
 
 Connected the CD pin of the serial port to IO22.
