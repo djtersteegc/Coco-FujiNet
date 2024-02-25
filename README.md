@@ -70,12 +70,9 @@ At this stage there is no official release of the Coco firmware in the [Fujinet 
 
 Grab SDCFLASH from the [Color Computer Archive](https://colorcomputerarchive.com/search?q=SDCFLASH). It contains a number of different HDB-DOS images for the various Coco models.
 
-`HDBDW3C1.ROM - HDB-DOS for Drivewire 3 (Coco 1) (Cloud-9)`
-`HDBDW3C2.ROM - HDB-DOS for Drivewire 3 (Coco 2) (Cloud-9)`
-`HDBDW3C3.ROM - HDB-DOS for Drivewire 3 (Coco 3) (Cloud-9)`
-`HDBDW4C2.ROM - HDB-DOS for Drivewire 4 (Coco 2) (Cloud-9)`
-`HDBDW4C3.ROM - HDB-DOS for Drivewire 4 (Coco 3) (Cloud-9)`
-`HDBSDC...ROM - HDB-DOS for the Coco SDC (Cloud-9)`
+`HDBDW3C1.ROM - HDB-DOS for Drivewire 3 (Coco 1) (Cloud-9)
+HDBDW3C2.ROM - HDB-DOS for Drivewire 3 (Coco 2) (Cloud-9)
+HDBDW3C3.ROM - HDB-DOS for Drivewire 3 (Coco 3) (Cloud-9)`
 
 Since I'm using a Coco2, I used **HDBDW3C2.ROM** and flashed it to the slot number 3 on my CocoSDC.  Set your DIP jumpers accordingly to use this new ROM image instead of the standard SDC-DOS image in slot 0. See the CocoSDC docs for more details.
 
