@@ -50,6 +50,49 @@ Here's what a minimal build looks like.  You'll only need R9, R11, R13, RN1, D1,
 
 ![rev0-minimal-complete](docs/rev0-minimal-complete.jpg)
 
+## Flashing HDB-DOS on your CocoSDC
+
+Grab SDCFLASH from the [Color Computer Archive](https://colorcomputerarchive.com/search?q=SDCFLASH). It contains a number of different HDB-DOS images for the various Coco models.
+
+`HDBDW3C1.ROM - HDB-DOS for Drivewire 3 (Coco 1) (Cloud-9)
+HDBDW3C2.ROM - HDB-DOS for Drivewire 3 (Coco 2) (Cloud-9)
+HDBDW3C3.ROM - HDB-DOS for Drivewire 3 (Coco 3) (Cloud-9)`
+
+Since I'm using a Coco2, I used **HDBDW3C2.ROM** and flashed it to the slot number 3 on my CocoSDC.  Set your DIP jumpers accordingly to use this new ROM image instead of the standard SDC-DOS image in slot 0. See the CocoSDC docs for more details.
+
+# Rev000
+
+Rev000 does away with the tape circuit and moves to a ROM for bootstrapping HDB-DOS, similar to a "minimal" Rev00 build and bootstraping via a CocoSDC or other ROM cart.  Since it is now a cartridge format, you no longer a need to power the ESP32 via USB, and instead it will normally take 5V from the cartridge port.  There is a diode so if you do want to power by USB for debug logging or other reasons it is safe to do so without backfeeding into the Coco.
+
+![rev000](docs/rev000.jpg)
+
+Schematic - https://djtersteegc.github.io/Coco-FujiNet/CoCo-FujiNet-Rev000-Schematic.pdf
+
+Interactive BOM - https://djtersteegc.github.io/Coco-FujiNet/ibom-Rev000.html
+
+The [3D printable case](CoCo-FujiNet-Rev000/3D/STL) is designed for 5mm LED's and 8mm right angle tact switches.
+
+Unlike the previous revisions, you will need to solder the ESP32 onto the PCB since the cartridge format is to short to allow it to be mounted on standard 8.5mm tall female headers. Print four of the [4mm spacers](CoCo-FujiNet-Rev000/3D/STL/CoCo-FujiNet-Rev000-4mm-Spacer.stl) to mount the ESP32 elevated from the PCB to help improve the wifi performance and provide more space between the SD slot and USB port.
+
+![rev000-ports](docs/rev000-ports.jpg)
+
+The DIP switch allows for up to four 16K ROM images to loaded and selected on a 27c512 (or equivilent) EPROM. There is a precompiled image in the [ROM directory](ROM) with HDB-DOS DriveWire 3 images for the various Coco's from the hdbdos-snapshot20190324 as well as a diagnostics ROM from the Color Computer Archive.
+
+| ROM                                       | SW1-1 (A14) | SW1-2 (A15) |
+| ----------------------------------------- | ----------- | ----------- |
+| hdbdw3cc1.rom                             | ON          | ON          |
+| hdbdw3cc2.rom                             | OFF         | ON          |
+| hdbdw3cc3.rom                             | ON          | OFF         |
+| Diagnostics v2.0 (1982) (26-3019) (Tandy) | OFF         | OFF         |
+
+The case is designed to be printed at a 0.2mm layer height.  Secure the PCB and two case halves with four M3x10mm to 20mm screws in the center four holes, and optionally four M3x16mm to 20mm screws in the outer four holes.  Overkill, but results in a very solid feeling cartridge with minal gaps between the two halves.
+
+![rev000-bottom](docs/rev000-bottom.jpg)
+
+![rev000-assembled](docs/rev000-assembled.jpg)
+
+![rev000-working](docs/rev000-working.jpg)
+
 # Building the Serial Cable
 
 The DIN 4 serial cable pinout (looking at it from the backside of the connector) with the corresponding XH connector pins (they are also marked on the PCB).
@@ -65,16 +108,6 @@ And some completed cable pics:
 # Flashing Your FujiNet
 
 At this stage there is no official release of the Coco firmware in the [Fujinet Flasher](https://fujinet.online/download/).  But you can still use it to easily flash a precompile version (check the Discord), or you can [compile one yourself](https://github.com/FujiNetWIFI/fujinet-firmware/wiki/Board-Bring-Up-Software).
-
-# Flashing HDB-DOS on your CocoSDC
-
-Grab SDCFLASH from the [Color Computer Archive](https://colorcomputerarchive.com/search?q=SDCFLASH). It contains a number of different HDB-DOS images for the various Coco models.
-
-`HDBDW3C1.ROM - HDB-DOS for Drivewire 3 (Coco 1) (Cloud-9)
-HDBDW3C2.ROM - HDB-DOS for Drivewire 3 (Coco 2) (Cloud-9)
-HDBDW3C3.ROM - HDB-DOS for Drivewire 3 (Coco 3) (Cloud-9)`
-
-Since I'm using a Coco2, I used **HDBDW3C2.ROM** and flashed it to the slot number 3 on my CocoSDC.  Set your DIP jumpers accordingly to use this new ROM image instead of the standard SDC-DOS image in slot 0. See the CocoSDC docs for more details.
 
 # Usage
 
