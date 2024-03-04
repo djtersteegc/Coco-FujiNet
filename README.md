@@ -62,7 +62,7 @@ Since I'm using a Coco2, I used **HDBDW3C2.ROM** and flashed it to the slot numb
 
 # Rev000
 
-Rev000 does away with the tape circuit and moves to a ROM for bootstrapping HDB-DOS, similar to a "minimal" Rev00 build and bootstraping via a CocoSDC or other ROM cart.  Since it is now a cartridge format, you no longer a need to power the ESP32 via USB, and instead it will normally take 5V from the cartridge port.  There is a diode so if you do want to power by USB for debug logging or other reasons it is safe to do so without backfeeding into the Coco.
+Rev000 does away with the tape circuit and moves to a ROM for bootstrapping HDB-DOS, similar to a "minimal" Rev00 build and bootstraping via a CocoSDC or other ROM cart.  Since it is now a cartridge format, you no longer need to power the ESP32 via USB, and instead it will normally take 5V from the cartridge port.  There is a diode so if you do want to power by USB for debug logging or other reasons it is safe to do so without backfeeding into the Coco.
 
 ![rev000](docs/rev000.jpg)
 
@@ -76,7 +76,7 @@ Unlike the previous revisions, you will need to solder the ESP32 onto the PCB si
 
 ![rev000-ports](docs/rev000-ports.jpg)
 
-The DIP switch allows for up to four 16K ROM images to loaded and selected on a 27c512 (or equivilent) EPROM. There is a precompiled image in the [ROM directory](ROM) with HDB-DOS DriveWire 3 images for the various Coco's from the hdbdos-snapshot20190324 as well as a diagnostics ROM from the Color Computer Archive.
+The DIP switch allows for up to four 16K ROM images to loaded and selected on a 27c512 (or equivalent) EPROM. There is a precompiled image in the [ROM directory](ROM) with HDB-DOS DriveWire 3 images for the various Coco's from the hdbdos-snapshot20190324 as well as a diagnostics ROM from the Color Computer Archive.
 
 | ROM                                       | SW1-1 (A14) | SW1-2 (A15) |
 | ----------------------------------------- | ----------- | ----------- |
@@ -85,7 +85,7 @@ The DIP switch allows for up to four 16K ROM images to loaded and selected on a 
 | hdbdw3cc3.rom                             | ON          | OFF         |
 | Diagnostics v2.0 (1982) (26-3019) (Tandy) | OFF         | OFF         |
 
-The case is designed to be printed at a 0.2mm layer height.  Secure the PCB and two case halves with four M3x10mm to 20mm screws in the center four holes, and optionally four M3x16mm to 20mm screws in the outer four holes.  Overkill, but results in a very solid feeling cartridge with minal gaps between the two halves.
+The case is designed to be printed at a 0.2mm layer height.  Secure the PCB and two case halves with four M3x10mm to 20mm screws in the center four holes, and optionally four M3x16mm to 20mm screws in the outer four holes.  Overkill, but results in a very solid feeling cartridge with minimal gaps between the two halves.
 
 ![rev000-bottom](docs/rev000-bottom.jpg)
 
@@ -111,7 +111,11 @@ At this stage there is no official release of the Coco firmware in the [Fujinet 
 
 # Usage
 
-Assuming the FujiNet device and CocoSDC are correctly flashed, plug it into your Coco's serial port, supply power via the USB port on the ESP32 (you can also use the Fujinet Flasher as a serial debug output console from the ESP32), and when you power up the Coco, it would lunch into the Fujinet config app.
+Rev0 and Rev00 - Plug serial cable into your Coco's serial port. Supply power to the Fujinet via the USB port on the ESP32. Plug CocoSDC or other ROM cart into cart slot to bootstrap HDB-DOS.
+
+Rev000 - Insert into cart slot and plug attached cable into your Coco's serial port.
+
+Assuming the FujiNet device (and CocoSDC if needed) is correctly flashed, it should launch into the Fujinet config app on power up.
 
 ![fujinet-loading](docs/fujinet-loading.jpg)
 
